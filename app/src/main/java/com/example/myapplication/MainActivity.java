@@ -102,10 +102,7 @@ public class MainActivity extends AppCompatActivity
         Intent intent = getIntent();
 
         String id = intent.getExtras().getString("id");
-        //String name = intent.getExtras().getString("name");
         login_id.setText(id);
-        //login_name.setText(name);
-        //login_name.setText(data.name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
