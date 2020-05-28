@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
                 }
                 else if(id == R.id.setting){
-                    //Toast.makeText(context, title + ": 로그아웃 시도중", Toast.LENGTH_SHORT).show();
 
                 }
                 return true;
