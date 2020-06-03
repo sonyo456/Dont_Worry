@@ -145,8 +145,6 @@ public class Login extends Activity {
         imm.hideSoftInputFromWindow(Password.getWindowToken(), 0);
     }
 
-
-
     public class myDBHelper extends SQLiteOpenHelper {
         public myDBHelper(Context context) {
             super(context, "LoginDB", null, 1);
