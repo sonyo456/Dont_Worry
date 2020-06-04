@@ -90,6 +90,7 @@ private InputMethodManager imm;
                 MarkerOptions mOptions = new MarkerOptions();
                 // 마커 타이틀
                 mOptions.title("마커 좌표");
+                int i=0;
                 Double latitude = point.latitude; // 위도
                 Double longitude = point.longitude; // 경도
                 // 마커의 스니펫(간단한 텍스트) 설정
