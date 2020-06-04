@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="nav_header_desc">My Application</string>
+    <string name="nav_header_title">ID</string>
+    <string name="nav_header_subtitle">Name</string>
+    <string name="action_sign_in">sing_up</string>
+    <string name="action_sign_up">sing_up</string>
+</resources>
