@@ -128,9 +128,7 @@ private InputMethodManager imm;
             }
 
         });
-        ////////////////////
 
-        // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(35.945287, 126.682163);
        // mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
