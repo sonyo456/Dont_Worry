@@ -143,7 +143,9 @@ private InputMethodManager imm;
 
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,15));
+                mMap.setOnMarkerClickListener(favorite.this::onMarkerClick);
             }
+
         });
         ////////////////////
 
@@ -156,12 +158,13 @@ private InputMethodManager imm;
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Intent intent = getIntent();
-        String id = intent.getExtras().getString("id");
-        sqlDB = myHelper.getWritableDatabase();
-        sqlDB.execSQL("INSERT INTO f_place VALUES ( '"
-                + id + "' , '"
-                + address+ "');");
+//        Intent intent = getIntent();
+//        String id = intent.getExtras().getString("id");
+//        sqlDB = myHelper.getWritableDatabase();
+//        sqlDB.execSQL("INSERT INTO f_place VALUES ( '"
+//                + id + "' , '"
+//                + address+ "');");
+        Toast.makeText(getApplicationContext(),"즐겨찾는 위치 추가 성공",Toast.LENGTH_SHORT).show();
         return true;
     }
 

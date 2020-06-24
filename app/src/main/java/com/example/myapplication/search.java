@@ -10,11 +10,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
+
 import android.widget.Toast;
 
 public class search extends AppCompatActivity {
@@ -22,6 +26,7 @@ public class search extends AppCompatActivity {
     SQLiteDatabase sqlDB;
     EditText search;
     ImageButton btn_search;
+    Button qwe_button;
     ListView listView;
     private InputMethodManager imm;
 
@@ -34,14 +39,15 @@ public class search extends AppCompatActivity {
         search =  (EditText) findViewById(R.id.search);
         btn_search = (ImageButton) findViewById(R.id.btn_search);
         listView = (ListView)findViewById(R.id.listView);
+        qwe_button = (Button)findViewById(R.id.qwe_button);
 
-        btn_search.setOnClickListener(new View.OnClickListener(){
+        btn_search.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View view) {
                 try {
                     sqlDB = myHelper.getReadableDatabase();
                     Cursor cursor;
-                    cursor = sqlDB.rawQuery("SELECT id FROM user WHERE id LIKE "+"'"+search.getText().toString()+"'"+";", null);
+                    cursor = sqlDB.rawQuery("SELECT id FROM user WHERE id LIKE "+"'"+search.getText().toString()+"%'"+";", null);
 
                     int count = cursor.getCount();   // db에 저장된 행 개수를 읽어온다
 
@@ -71,7 +77,15 @@ public class search extends AppCompatActivity {
                 }
             }
         });
+        qwe_button.setOnClickListener(new OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"admin님께 동의 메세지 발송",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
 
     public class myDBHelper extends SQLiteOpenHelper {
         public myDBHelper(Context context) {

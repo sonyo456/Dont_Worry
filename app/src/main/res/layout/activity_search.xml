@@ -47,8 +47,14 @@
 
         <ListView
             android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="434dp" />
+            android:layout_width="303dp"
+            android:layout_height="434dp"></ListView>
+
+        <Button
+            android:id="@+id/qwe_button"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"></Button>
 
     </LinearLayout>
 </LinearLayout>

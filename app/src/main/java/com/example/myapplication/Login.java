@@ -94,8 +94,8 @@ public class Login extends Activity {
                         //finish();
                         break;
                     }else{
-                        Id.setText(null);
-                        Password.setText(null);
+//                        Id.setText(null);
+//                        Password.setText(null);
                         Toast.makeText(getApplicationContext(),  "로그인 실패", Toast.LENGTH_SHORT).show();
                     }
                 }
